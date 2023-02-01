@@ -1,24 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import Nav from "./navbar/Nav";
+import Profile from "./profile/Profile";
+import Contact from "./contact/Contact";
+import ProjectList from "./projects/ProjectList";
+import { Fragment } from "react";
+import image from "./John-Doe.jpg";
+import proj from "./proj.png";
 function App() {
+  const about = {
+    name: "John Doe",
+    discription: "and i make horrible websites.",
+    image: image,
+    projects: [
+      {
+        id: 1,
+        name: "project 1",
+        image: proj,
+        paragraphe:
+          "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus ex natus quis beatae perspiciatis repellat laudantium aliquam.",
+      },
+      {
+        id: 2,
+        name: "project 2",
+        image: proj,
+        paragraphe:
+          "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus ex natus quis beatae perspiciatis repellat laudantium aliquam.",
+      },
+      {
+        id: 3,
+        name: "project 3",
+        image: proj,
+        paragraphe:
+          "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus ex natus quis beatae perspiciatis repellat laudantium aliquam.",
+      },
+      {
+        id: 4,
+        name: "project 4",
+        image: proj,
+        paragraphe:
+          "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus ex natus quis beatae perspiciatis repellat laudantium aliquam.",
+      },
+    ],
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <Nav about={about} />
+
+      <Profile about={about} />
+      <ProjectList about={about} />
+
+      <Contact />
+    </Fragment>
   );
 }
 
